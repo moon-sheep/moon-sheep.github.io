@@ -1,0 +1,119 @@
+body {
+  background-color: hsl(30, 38%, 92%);
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 
+
+.container {
+  background-color: hsl(0, 0%, 100%);
+  display: grid;
+  grid-template-columns: 300px 300px;
+  grid-template-rows: repeat(5, minmax(auto, 75px));
+  grid-template-areas: 
+    'image category'
+    'image title'
+    'image description'
+    'image price'
+    'image cta';
+  margin: 450px;
+  gap: 20px;
+  border-radius: 10px;
+}
+
+.image {
+  grid-area: image;
+}
+
+img {
+  height: 100%;
+  max-width: 100%;
+  border-radius: 5px 0 0 5px;
+  margin: 0
+}
+
+.cover {
+  object-fit: cover;
+}
+
+.category {
+  grid-area: category;
+  font-family: 'Montserrat', sans-serif;
+  color: hsl(228, 12%, 48%);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding-top: 45px;
+  padding-bottom: 0;
+  margin-bottom: 0
+}
+
+.product {
+  grid-area: title;
+  font-family: 'Fraunces', serif;
+  font-weight: 700; 
+  font-size: 2rem;
+}
+
+.descrip {
+  grid-area: description;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 1rem; 
+  color: hsl(228, 12%, 48%);
+  margin-top: 30px;
+}
+
+.prices {
+  grid-area: price;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+#srp {
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  color: hsl(158, 36%, 37%);
+  font-size: 2.5rem
+}
+
+#slash {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: hsl(228, 12%, 48%);
+}
+
+input[type=button] {
+  grid-area: cta;
+  background-color: hsl(158, 36%, 37%);
+  border: none;
+  border-radius: 10px;
+  color: hsl(0, 0%, 100%);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 20px 85px;
+}
+
+label {
+  position: relative;
+  align-self: center;
+  justify-self: start;
+  padding-bottom: 25px;
+}
+
+/*-- ICON --*/ 
+label::before {
+  content: "";
+  position: absolute;
+  left: 60px;
+  top: 0;
+  bottom: 25px;
+  width: 15px;
+  background: url(https://moon-sheep.github.io/product-card-challenge/icon-cart.svg) center / contain no-repeat; 
+}
